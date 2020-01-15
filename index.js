@@ -10,17 +10,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //__dirname is your current location
-app.use(express.static(path.resolve(__dirname,'..','public')));
+app.use(express.static(path.resolve(__dirname,'public')));
 
-const filePath = path.join(__dirname, "..", "db", "db.json");
+const filePath = path.join(__dirname, "db", "db.json");
 
 //The routes
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+    res.sendFile(path.join(__dirname, "public", "index.html"));
   });
   
 app.get("/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "..", "public", "notes.html"));
+    res.sendFile(path.join(__dirname, "public", "notes.html"));
   });
 
 // app.use("*", function(req, res) {
